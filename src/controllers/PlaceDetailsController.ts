@@ -17,7 +17,7 @@ export const PlaceDetailsController = {
     const { data: placeResponseData } = await placesClient.findPlaceFromText({
       params: {
         key: process.env.GOOGLE_PLACES_KEY,
-        input: 'são paulo',
+        input: String(input),
         inputtype: PlaceInputType.textQuery,
         fields: ['photos', 'geometry']
       }
