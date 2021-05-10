@@ -1,5 +1,7 @@
-import express from 'express'
+import { app } from './app'
 
-const app = express()
+const serverPort = process.env.PORT || 3333
 
-app.listen(3333, () => console.log('working'))
+app.listen(serverPort, () => 
+  console.log(`🌐 Server started on port ${serverPort}`)
+)
