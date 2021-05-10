@@ -23,7 +23,7 @@ export const PlaceDetailsController = {
       }
     })
 
-    if (placeResponseData.candidates.length) {
+    if (!placeResponseData.candidates.length) {
       return useErrorMessage('place not found', 400, res)
     }
 
