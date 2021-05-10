@@ -11,7 +11,7 @@ export const PlaceDetailsController = {
     const { input } = req.query
 
     if (!input) {
-      return useErrorMessage('"input" param is required', 400, res)
+      return useErrorMessage('"input" param is required', 200, res)
     }
 
     const { data: placeResponseData } = await placesClient.findPlaceFromText({
@@ -24,7 +24,7 @@ export const PlaceDetailsController = {
     })
 
     if (!placeResponseData.candidates.length) {
-      return useErrorMessage('place not found', 400, res)
+      return useErrorMessage('place not found', 200, res)
     }
 
     const placeDetails = placeResponseData.candidates[0]
